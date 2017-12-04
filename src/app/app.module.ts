@@ -12,7 +12,7 @@ import { AboutComponent } from './about/about.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { FlightListComponent } from './flight-list/flight-list.component';
-
+import { NgProgressModule } from '@ngx-progressbar/core';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,8 @@ import { FlightListComponent } from './flight-list/flight-list.component';
     AppRoutingModule,
     FormsModule,
     HttpModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgProgressModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
