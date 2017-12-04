@@ -13,6 +13,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { FlightListComponent } from './flight-list/flight-list.component';
 import { NgProgressModule } from '@ngx-progressbar/core';
+import { FlightBookSummaryComponent } from './flight-book-summary/flight-book-summary.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NgProgressModule } from '@ngx-progressbar/core';
     AboutComponent,
     HeaderComponent,
     FooterComponent,
-    FlightListComponent
+    FlightListComponent,
+    FlightBookSummaryComponent
   ],
   imports: [
     BrowserModule,
