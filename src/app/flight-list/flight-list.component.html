@@ -1,8 +1,8 @@
-<ng-progress [color]="'red'"></ng-progress>
-<!-- <div *ngIf="loader">
-  Please wait I am Loading
-  <img src="./assets/images/loginLoader.gif"/>
-</div> -->
+
+  <div class="col-md-12 col-sm-12 col-xs-12 loaderbackground" *ngIf="loader">
+  
+  <img class="center-block" src="./assets/images/loginLoader.gif"/>
+</div>  
 <div class="col-md-12 col-sm-12 col-xs-12">
   <div class="col-md-2 col-sm-2 col-xs-2"></div>
   <div class="col-md-10 col-sm-10 col-xs-10" >  
@@ -11,10 +11,12 @@
 
     </div>
 <div class="col-md-12 col-sm-12 col-xs-12 flightIndexing" *ngFor="let flights of flightList; let index = index"> 
-  <div class="col-md-5 col-sm-5 col-xs-5 section1">
+  <div class="col-md-4 col-sm-4 col-xs-4 section1">
      <span class="img-wh"> <span
       class="spriteFltLogos x{{flights.flightSegmentsGroups[0].flightSegments[0].segments[0].carrier.code}}"></span>
-    </span> {{flights.flightSegmentsGroups[0].flightSegments[0].flightIndex}}
+    </span> 
+    <p>{{flights.flightSegmentsGroups[0].flightSegments[0].segments[0].carrier.name}}
+    <span>{{flights.flightSegmentsGroups[0].flightSegments[0].segments[0].carrier.code}}</span></p>
   </div>
   <div class="col-md-2 col-sm-2 col-xs-2 section2">
       <p>{{flights.flightSegmentsGroups[0].flightSegments[0].segments[0].depTime}}</p>
@@ -24,6 +26,13 @@
         <p>{{flights.flightSegmentsGroups[0].flightSegments[0].segments[0].arrTime}}</p>
         <p>{{flights.flightSegmentsGroups[0].flightSegments[0].segments[0].dest}}</p>
       </div>
+      <div class="col-md-2 col-sm-2 col-xs-2 section4">
+          <p>{{flights.flightSegmentsGroups[0].flightSegments[0].segments[0].duration}}</p>
+          <p>{{flights.flightSegmentsGroups[0].flightSegments[0].segments[0].stops}}</p>
+        </div>
+        <div class="col-md-2 col-sm-2 col-xs-2 ">
+          <button class="book-btn pull-right" (click)="flightBookNow(flights.id)">Book</button>
+        </div>
 </div>
  </div>
 </div>

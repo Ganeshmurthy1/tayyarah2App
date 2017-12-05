@@ -28,6 +28,7 @@ export class FlightListComponent implements OnInit {
   triptype;
  ApiDataConstruct;
  flightSearchData;
+ sendData;
  flightList = new Array();
  public loader= false;
   constructor(private flightServc:FlightServiceService,
@@ -70,13 +71,18 @@ export class FlightListComponent implements OnInit {
   searcApiCall(){
     this.loader = true;
     this.progress.start();
-console.log('Api send Data',this.ApiDataConstruct);
+
 this.flightServc.flightSearchData(this.ApiDataConstruct).subscribe(response=>{
    this.progress.done();
   this.loader = false;
   this.flightSearchData = response;
-  console.log('Api send response',response);
 this.flightList = this.flightSearchData.fareFlightSegment;
 })
+  }
+
+  flightBookNow(indx){
+    console.log("index",indx);
+    this.sendData = "/flightSummary?app_key=zqJ3R9cGpNWgNXG55ub%2FWQ%3D%3D&flightindex=TB2372e953:160252d2d19:-6b44&islowfare=true&lowfareflightindex1=&lowfareflightindex2=&reasontoselect=&searchkey=2372e953:160252d2d19:-6b4c";
+    this.router.navigateByUrl(this.sendData);
   }
 }

@@ -24,11 +24,12 @@
        </div>  
          </div>
 </div>
-<div>
+<div class="search-engine">
 
   <form #flightForm="ngForm" (ngSubmit)="flightSearch(flightForm)">
       <input type="text" name="origin" [(ngModel)]="ori" placeholder="origin" />
       <input type="text" name="destination" [(ngModel)]="dest" placeholder="Destination" />
+      <input type="text" name="depart" [(ngModel)]="depart" placeholder="YYYYMMDD" />
       <button type="submit" class="btn btn-default" >Search</button>
     </form>
 </div>

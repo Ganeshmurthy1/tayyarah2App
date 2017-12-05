@@ -10,14 +10,17 @@ export class FlightServiceService extends CommonServiceService{
     super();
  }
  
-//  flightSearchData(data){
-//    console.log("serviceData",data);
-//    return this.http.get(this.url + 'flight/search?'+data)
-//    .map(res=>res.json())
-//  }
-flightSearchData(data){
-  console.log("serviceData",data);
-  return this.http.get('./assets/flightsearch.json')
-  .map(res=>res.json())
-}
+ flightSearchData(data){
+   console.log("serviceData",data);
+   return this.http.get(this.url + 'flight/search?'+data)
+   .map(res=>res.json())
+ }
+ flightAirPrice(data){
+   return this.http.get(this.url+'airprice/response?'+data)
+   .map(res=>res.json())
+ }
+// flightSearchData(data){  
+//   return this.http.get('./assets/flightsearch.json')
+//   .map(res=>res.json())
+// }
 }
