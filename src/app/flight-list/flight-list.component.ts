@@ -27,6 +27,9 @@ export class FlightListComponent implements OnInit {
   searchkey;
   triptype;
  ApiDataConstruct;
+ flightSearchData;
+ flightList = new Array();
+ public loader= false;
   constructor(private flightServc:FlightServiceService,
     private router: Router ,
     private actRoute: ActivatedRoute,
@@ -65,11 +68,15 @@ export class FlightListComponent implements OnInit {
   }
 
   searcApiCall(){
+    this.loader = true;
     this.progress.start();
 console.log('Api send Data',this.ApiDataConstruct);
 this.flightServc.flightSearchData(this.ApiDataConstruct).subscribe(response=>{
+   this.progress.done();
+  this.loader = false;
+  this.flightSearchData = response;
   console.log('Api send response',response);
-  this.progress.done();
+this.flightList = this.flightSearchData.fareFlightSegment;
 })
   }
 }
