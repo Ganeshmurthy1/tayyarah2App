@@ -14,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FlightListComponent } from './flight-list/flight-list.component';
 import { NgProgressModule } from '@ngx-progressbar/core';
 import { FlightBookSummaryComponent } from './flight-book-summary/flight-book-summary.component';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,9 @@ import { FlightBookSummaryComponent } from './flight-book-summary/flight-book-su
     FormsModule,
     HttpModule,
     ReactiveFormsModule,
-    NgProgressModule.forRoot()
+    NgProgressModule.forRoot(),
+    FlashMessagesModule.forRoot()
+
   ],
   providers: [],
   bootstrap: [AppComponent]

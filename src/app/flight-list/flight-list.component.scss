@@ -28,3 +28,8 @@
     padding: 5px 0px;
     margin: 10px 0px;
 }
+.flash-message
+{
+    z-index: 10000;
+    position: relative;
+}

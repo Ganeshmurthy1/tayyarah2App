@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Route, RouterModule,Router,ActivatedRoute} from '@angular/router'; 
 import { FlightServiceService } from '../flight-service.service';
 import { NgProgress } from '@ngx-progressbar/core';
+import { FlashMessagesService } from 'angular2-flash-messages';
 @Component({
   selector: 'app-flight-list',
   templateUrl: './flight-list.component.html',
@@ -34,7 +35,8 @@ export class FlightListComponent implements OnInit {
   constructor(private flightServc:FlightServiceService,
     private router: Router ,
     private actRoute: ActivatedRoute,
-    public progress: NgProgress) { }
+    public progress: NgProgress,
+    private _flashMessagesService: FlashMessagesService) { }
 
   ngOnInit() {
     this.actRoute
@@ -74,6 +76,7 @@ export class FlightListComponent implements OnInit {
 
 this.flightServc.flightSearchData(this.ApiDataConstruct).subscribe(response=>{
    this.progress.done();
+   this._flashMessagesService.show('We are in about component!', { cssClass: 'alert-success', timeout: 1000 });
   this.loader = false;
   this.flightSearchData = response;
 this.flightList = this.flightSearchData.fareFlightSegment;

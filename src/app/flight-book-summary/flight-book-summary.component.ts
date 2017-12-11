@@ -31,4 +31,5 @@ flightindex;
   getAirpriceSummary(){
     this.apiData = "";
   }
+  
 }
