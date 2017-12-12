@@ -1,3 +1,4 @@
+ 
 <div>
     <div class="banner">
         <div id="carousel-id" class="carousel slide carousel-fade"
@@ -31,5 +32,13 @@
       <input type="text" name="destination" [(ngModel)]="dest" placeholder="Destination" />
       <input type="text" name="depart" [(ngModel)]="depart" placeholder="YYYYMMDD" />
       <button type="submit" class="btn btn-default" >Search</button>
+      
+      <div ng2-auto-complete 
+      [source]="arrayOfStrings"
+      (valueChanged)="valueChanged($event)"
+      placeholder="enter text">
+      <input name="origin" [(ngModel)]="ori" placeholder="origin"/>
+    </div>
+
     </form>
 </div>

@@ -1,3 +1,4 @@
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -15,7 +16,8 @@ import { FlightListComponent } from './flight-list/flight-list.component';
 import { NgProgressModule } from '@ngx-progressbar/core';
 import { FlightBookSummaryComponent } from './flight-book-summary/flight-book-summary.component';
 import { FlashMessagesModule } from 'angular2-flash-messages';
-
+import { Ng2AutoCompleteModule } from 'ng2-auto-complete';
+import { DomSanitizer, SafeHtml } from "@angular/platform-browser";
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,10 +35,13 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
     HttpModule,
     ReactiveFormsModule,
     NgProgressModule.forRoot(),
-    FlashMessagesModule.forRoot()
+    FlashMessagesModule.forRoot(),
+    Ng2AutoCompleteModule,
+   
 
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+platformBrowserDynamic().bootstrapModule(AppModule);
