@@ -1,9 +1,20 @@
+ 
 .search-engine {
     position: absolute;
     top: 70%;
     left: 10%;
 }
-
+.searchForm input{
+    height: 32px;
+}
 .autoComp input{
     background-color: red!important; 
+}
+.buttonBlock{
+    padding-left: 40px;
+}
+.buttonBlock button{
+    width: 125px;
+    background-color: chocolate;
+    color: white;
 }

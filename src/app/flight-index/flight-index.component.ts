@@ -5,6 +5,9 @@ import {NgForm} from '@angular/forms';
 import { FormsModule, ReactiveFormsModule, FormGroup, FormControl, FormBuilder, FormArray, Validators} from '@angular/forms';
 import { Ng2AutoCompleteModule } from 'ng2-auto-complete';
 import { DomSanitizer, SafeHtml } from "@angular/platform-browser";
+import { DatepickerOptions } from 'ng2-datepicker';
+import * as enLocale from 'date-fns/locale/en';
+ 
 @Component({
   selector: 'app-flight-index',
   templateUrl: './flight-index.component.html',
@@ -18,13 +21,33 @@ export class FlightIndexComponent implements OnInit {
   arrival;
   sendData;
   resData;
-  arrayOfStrings = ['thixfdgfgdfgs', 'isdfgdfgdfg', 'listdfgdfgdfg', 'ofdfgdfgdfg', 'stringdfgdfg', 'element'];
+  depDate: Date;
+  arrivalDate: Date;
+  // options: DatepickerOptions = {
+  //   minYear: 1970,
+  //   maxYear: 2030,
+  //   displayFormat: 'MMM DD YYYY',
+  //   barTitleFormat: 'MMMM YYYY',
+  //   firstCalendarDay: 0, // 0 - Sunday, 1 - Monday
+  //   locale: frLocale
+  // };
+ 
+  options: DatepickerOptions = {
+     locale: enLocale, 
+     displayFormat: 'DD/MM/YYYY'
+    
+  };
+  
   
   constructor(private flightServc:FlightServiceService,
     private router: Router       
-  ) { }
+  ) {
+    this.depDate = new Date();
+    this.arrivalDate = new Date();
+   }
 
   ngOnInit() {
+    
   }
 
   // flightSearch(){
@@ -39,11 +62,26 @@ export class FlightIndexComponent implements OnInit {
   //   })
   // }
   flightSearch(data:NgForm){
-      console.log("message1",data.value);
-     this.sendData = "/flightList?adult=1&airline=&app_key=zqJ3R9cGpNWgNXG55ub%2FWQ%3D%3D&arvlDate=&cabinClass=Economy&currency=INR&depDate=20171216&destination=MAA&infant=0&isCacheData=false&isDomestic=false&isDynamicMarkup=false&kid=0&markupAmount=0&origin=BLR&searchkey=&triptype=O";
+      console.log("arrivalDate",this.yyyymmddFormat(data.value.arrivalDate));
+      console.log("departDate",this.yyyymmddFormat(data.value.departDate));
+     
+     this.sendData = "/flightList?adult=1&airline=&app_key=zqJ3R9cGpNWgNXG55ub%2FWQ%3D%3D&arvlDate=&cabinClass=Economy&currency=INR&depDate="+this.yyyymmddFormat(data.value.departDate)+"&destination="+this.destination+"&infant=0&isCacheData=false&isDomestic=false&isDynamicMarkup=false&kid=0&markupAmount=0&origin="+this.origin+"&searchkey=&triptype=O";
      this.router.navigateByUrl(this.sendData);
     }   
-    valueChanged(newVal) {
-      console.log("Case 2: value is changed to ", newVal);
+    arrayOfStrings = ['BLR', 'MAA', 'DEL', 'ASD', 'ASE', 'ACC'];
+    originChanged(ori) {
+      this.origin = ori;
+     
     }
+    destChanged(dest) {
+       this.destination = dest;
+      
+    }
+    yyyymmddFormat(dateIn) {
+      var yyyy = dateIn.getFullYear();
+      var mm = dateIn.getMonth()+1; // getMonth() is zero-based
+      var dd  = dateIn.getDate();
+      return String(10000*yyyy + 100*mm + dd); // Leading zeros for mm and dd
+    }
+
 }

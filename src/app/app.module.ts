@@ -5,8 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Http, HttpModule, Response } from '@angular/http';
 import {Route, RouterModule,Router,ActivatedRoute} from '@angular/router'; 
 import { AppRoutingModule } from './app-routing.module';
-
-
+import * as $ from 'jquery';
 import { AppComponent } from './app.component';
 import { FlightIndexComponent } from './flight-index/flight-index.component';
 import { AboutComponent } from './about/about.component';
@@ -18,6 +17,7 @@ import { FlightBookSummaryComponent } from './flight-book-summary/flight-book-su
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { Ng2AutoCompleteModule } from 'ng2-auto-complete';
 import { DomSanitizer, SafeHtml } from "@angular/platform-browser";
+import { NgDatepickerModule } from 'ng2-datepicker';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +37,8 @@ import { DomSanitizer, SafeHtml } from "@angular/platform-browser";
     NgProgressModule.forRoot(),
     FlashMessagesModule.forRoot(),
     Ng2AutoCompleteModule,
+    NgDatepickerModule
+      
    
 
   ],
