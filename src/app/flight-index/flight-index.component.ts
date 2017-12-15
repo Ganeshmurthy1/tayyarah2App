@@ -34,14 +34,12 @@ export class FlightIndexComponent implements OnInit {
  
   options: DatepickerOptions = {
      locale: enLocale, 
-     displayFormat: 'DD/MM/YYYY'
-    
+     displayFormat: 'DD/MM/YYYY'    
   };
   
   
   constructor(private flightServc:FlightServiceService,
-    private router: Router       
-  ) {
+    private router: Router  ) {
     this.depDate = new Date();
     this.arrivalDate = new Date();
    }
