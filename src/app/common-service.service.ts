@@ -5,6 +5,6 @@ export class CommonServiceService {
 
   constructor() { }
   public url = "https://dev.tayyarah.com/devtayyarahapi/";
- //public url = "https://api.tayyarah.com/tayyarahapi/";
+
    
 }
