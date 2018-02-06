@@ -37,7 +37,6 @@ export class FlightIndexComponent implements OnInit {
      displayFormat: 'DD/MM/YYYY'    
   };
   
-  
   constructor(private flightServc:FlightServiceService,
     private router: Router  ) {
     this.depDate = new Date();

@@ -1,27 +1,127 @@
  
-.search-engine {
-    position: absolute;
-    top: 70%;
-    left: 10%;
-}
-.searchForm input{
-    height: 32px;
-}
-.autoComp input{
-    background-color: red!important; 
-}
-.buttonBlock{
-    padding-left: 40px;
-}
-.buttonBlock button{
-    width: 125px;
-    background-color: chocolate;
-    color: white;
-}
 .parallax-background {
     background-image: url(/assets/images/s3.jpg);
     min-height: 600px;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
+}
+.btns-top {
+    margin-top: 20px;
+    margin-bottom: -8px;
+    background: rgba(0, 0, 0, 0.6);
+}
+.main-tabs {
+    display: inline-block;
+    text-align: center;
+    color: white;
+    padding: 10px;
+}
+.main-tabs.active{
+    background-color: #FF5722
+}
+.search-book-box {
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    color: #ffffff;
+    background: #fff;
+    
+}
+.Find-quiz{
+    color:#ffffff;
+}
+.btn-search{
+    padding: 5px 40px;
+    background-color: #FF5722
+     
+}
+// carouesal start
+.ui-carousel {
+    position: relative;
+    padding: .063em;
+}
+
+.ui-carousel .ui-carousel-viewport .ui-carousel-items {
+    list-style: none outside none;
+    margin: 0;
+    padding:0;
+    position: relative;
+    width: 32000px;
+    left: 0;
+}
+
+.ui-carousel .ui-carousel-viewport .ui-carousel-items .ui-carousel-item {
+    margin: 1px;
+    padding: 0;
+    float: left;
+    box-sizing: border-box;
+}
+
+.ui-carousel .ui-carousel-viewport {
+    overflow: hidden;
+    position: relative;
+    border: 0;
+}
+
+.ui-carousel .ui-carousel-footer {
+    margin: 1px 1px 0px 1px;
+    padding: .5em;
+    overflow: hidden;
+}
+
+.ui-carousel .ui-carousel-header {
+    margin: 0 1px;
+    overflow: hidden;
+    padding: .625em;
+}
+
+.ui-carousel .ui-carousel-header .ui-carousel-header-title {
+    display: inline-block;
+    overflow: hidden;
+}
+
+.ui-carousel .ui-carousel-dropdown,
+.ui-carousel .ui-carousel-mobiledropdown {
+    float: right;
+    margin: 0px .625em;
+    background-image: none;
+}
+
+.ui-carousel .ui-carousel-dropdown option,
+.ui-carousel .ui-carousel-mobiledropdown option{
+    background-image: none;
+    border: 0 none;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.ui-carousel .ui-carousel-button {
+    float: right;
+    margin: .125em;
+}
+
+.ui-carousel .ui-carousel-page-link {
+    float: left;
+    margin: 0 .125em;
+    text-decoration: none;
+}
+
+.ui-carousel .ui-carousel-page-link, 
+.ui-carousel .ui-carousel-button {
+    cursor: pointer;
+}
+
+.ui-carousel .ui-carousel-page-links {
+    margin: 0px .5em;
+    margin-top: .125em;
+    float: right;
+}
+
+.ui-carousel .ui-carousel-mobiledropdown {
+    display: none;
+}
+//end of carousel
+.searchEngine form .form-group{
+    padding:0px 10px;
 }

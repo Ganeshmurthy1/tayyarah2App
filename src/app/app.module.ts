@@ -18,6 +18,7 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
 import { Ng2AutoCompleteModule } from 'ng2-auto-complete';
 import { DomSanitizer, SafeHtml } from "@angular/platform-browser";
 import { NgDatepickerModule } from 'ng2-datepicker';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,10 +38,10 @@ import { NgDatepickerModule } from 'ng2-datepicker';
     NgProgressModule.forRoot(),
     FlashMessagesModule.forRoot(),
     Ng2AutoCompleteModule,
-    NgDatepickerModule
-      
-   
-
+    NgDatepickerModule,
+    
+ 
+ 
   ],
   providers: [],
   bootstrap: [AppComponent]
