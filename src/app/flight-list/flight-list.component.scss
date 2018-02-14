@@ -1,35 +1,41 @@
-.modifyPanel{
-    height:20px;
-    margin:10px 0px;
-}
+// .modifyPanel{
+//     height:20px;
+//     margin:10px 0px;
+// }
+// .flightIndexing{
+//     border: 1px solid gray;
+//     margin: 10px 0px;
+//     padding:10px;
+// }
+// .section1{
+//     border: 1px solid gray;
+//     height: 70px;
+// }
+// .section2{
+//     border: 1px solid gray;
+//     height: 70px;
+// }
+// .section3{
+//     border: 1px solid gray;
+//     height: 70px;
+// }
+// .section4{
+//     border: 1px solid gray;
+//     height: 70px;
+// }
+// .book-btn{
+//     width: 120px;
+//     padding: 5px 0px;
+//     margin: 10px 0px;
+// }
+// .flash-message
+// {
+//     z-index: 10000;
+//     position: relative;
+// }
 .flightIndexing{
-    border: 1px solid gray;
+    padding: 10px;
+    border: 1px solid #ccc;
     margin: 10px 0px;
-    padding:10px;
-}
-.section1{
-    border: 1px solid gray;
-    height: 70px;
-}
-.section2{
-    border: 1px solid gray;
-    height: 70px;
-}
-.section3{
-    border: 1px solid gray;
-    height: 70px;
-}
-.section4{
-    border: 1px solid gray;
-    height: 70px;
-}
-.book-btn{
-    width: 120px;
-    padding: 5px 0px;
-    margin: 10px 0px;
-}
-.flash-message
-{
-    z-index: 10000;
-    position: relative;
+    background-color: #fff;
 }

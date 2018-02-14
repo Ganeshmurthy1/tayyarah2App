@@ -18,7 +18,7 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
 import { Ng2AutoCompleteModule } from 'ng2-auto-complete';
 import { DomSanitizer, SafeHtml } from "@angular/platform-browser";
 import { NgDatepickerModule } from 'ng2-datepicker';
-
+import { DeviceDetectorModule } from 'ngx-device-detector';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +39,7 @@ import { NgDatepickerModule } from 'ng2-datepicker';
     FlashMessagesModule.forRoot(),
     Ng2AutoCompleteModule,
     NgDatepickerModule,
-    
+    DeviceDetectorModule.forRoot()
  
  
   ],

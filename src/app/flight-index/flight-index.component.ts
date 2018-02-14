@@ -7,7 +7,7 @@ import { Ng2AutoCompleteModule } from 'ng2-auto-complete';
 import { DomSanitizer, SafeHtml } from "@angular/platform-browser";
 import { DatepickerOptions } from 'ng2-datepicker';
 import * as enLocale from 'date-fns/locale/en';
- 
+import { DeviceDetectorService } from 'ngx-device-detector';
 @Component({
   selector: 'app-flight-index',
   templateUrl: './flight-index.component.html',
@@ -23,6 +23,8 @@ export class FlightIndexComponent implements OnInit {
   resData;
   depDate: Date;
   arrivalDate: Date;
+ 
+  browserInfo;
   // options: DatepickerOptions = {
   //   minYear: 1970,
   //   maxYear: 2030,
@@ -38,13 +40,15 @@ export class FlightIndexComponent implements OnInit {
   };
   
   constructor(private flightServc:FlightServiceService,
-    private router: Router  ) {
+    private router: Router, private deviceService: DeviceDetectorService  ) {
     this.depDate = new Date();
     this.arrivalDate = new Date();
    }
 
   ngOnInit() {
-    
+  
+     this.browserInfo = this.deviceService.getDeviceInfo().browser;
+     console.log("this.browserInfo",typeof(this.browserInfo));
   }
 
   // flightSearch(){
@@ -58,11 +62,13 @@ export class FlightIndexComponent implements OnInit {
   //     }
   //   })
   // }
+  
   flightSearch(data:NgForm){
+    
       console.log("arrivalDate",this.yyyymmddFormat(data.value.arrivalDate));
       console.log("departDate",this.yyyymmddFormat(data.value.departDate));
-     
-     this.sendData = "/flightList?adult=1&airline=&app_key=zqJ3R9cGpNWgNXG55ub%2FWQ%3D%3D&arvlDate=&cabinClass=Economy&currency=INR&depDate="+this.yyyymmddFormat(data.value.departDate)+"&destination="+this.destination+"&infant=0&isCacheData=false&isDomestic=false&isDynamicMarkup=false&kid=0&markupAmount=0&origin="+this.origin+"&searchkey=&triptype=O";
+    
+     this.sendData = "/flightList?adult=1&airline=&app_key=zqJ3R9cGpNWgNXG55ub%2FWQ%3D%3D&arvlDate=&cabinClass=Economy&currency=INR&depDate="+this.yyyymmddFormat(data.value.departDate)+"&destination="+this.destination+"&infant=0&isCacheData=false&isDomestic=false&isDynamicMarkup=false&kid=0&markupAmount=0&origin="+this.origin+"&searchkey=&triptype=O&ipAddress=49.204.80.102&browser="+this.browserInfo;
      this.router.navigateByUrl(this.sendData);
     }   
     arrayOfStrings = ['BLR', 'MAA', 'DEL', 'ASD', 'ASE', 'ACC'];

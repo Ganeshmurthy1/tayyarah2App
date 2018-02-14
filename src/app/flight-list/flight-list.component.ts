@@ -30,6 +30,8 @@ export class FlightListComponent implements OnInit {
  ApiDataConstruct;
  flightSearchData;
  sendData;
+ ipAddress;
+ browserType;
  flightList = new Array();
  public loader= false;
   constructor(private flightServc:FlightServiceService,
@@ -60,11 +62,12 @@ export class FlightListComponent implements OnInit {
          this.origin = params['origin'];        
          this.searchkey = params['searchkey'];        
          this.triptype = params['triptype'];
-      
+         this.ipAddress = params['ipAddress'];
+        this.browserType = params['browser'];
         this.ApiDataConstruct = 'adult='+this.adult+'&airline='+this.airline+'&app_key='+this.app_key+'&arvlDate='+this.arvlDate+'&cabinClass='+this.cabinClass+
                                   '&currency='+this.currency+'&depDate='+this.depDate+'&destination='+this.destination+'&infant='+this.infant+'&isCacheData='+this.isCacheData+
                                   '&isDomestic='+this.isDomestic+'&isDynamicMarkup='+this.isDynamicMarkup+'&kid='+this.kid+'&markupAmount='+this.markupAmount+'&origin='+this.origin+
-                                  '&searchkey='+this.searchkey+'&triptype='+this.triptype;
+                                  '&searchkey='+this.searchkey+'&triptype='+this.triptype+'&ipAddress='+this.ipAddress+'&browser='+this.browserType;
       
         this.searcApiCall();
       });
